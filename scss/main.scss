@@ -1,0 +1,151 @@
+// VARIABLES 
+// after completion, move to _variables.scss
+// @import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap');
+
+$fontFamily: 'Asap', sans-serif;
+$websiteContentWidth: 1200px;
+$bodyBgClr: #262632;
+$badgeBgClr: #e15861;
+
+
+
+// GLOBAL STYLES
+
+body {
+    font-family: $fontFamily;
+    background: $bodyBgClr;
+    text-align: center;
+}
+
+
+
+// --- MAIN STYLING --- //
+
+header {
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+#pageTitle {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+#numberOfPointsToWin {
+    margin: 10px 0 0;
+    font-size: 20px;
+}
+
+#scoreBoard {
+    position: relative;
+    border: 3px solid white;
+    margin: 40px auto 0;
+    width: 200px;
+    text-align: center;
+    font-size: 48px;
+    color: white;
+    padding: 20px 10px;
+
+    .badge {
+        position: absolute;
+        background: $badgeBgClr;
+        font-size: 14px;
+        padding: 3px 10px;
+        top: calc(50% - 11px);
+        width: 50px;
+
+        &.user {
+            left: -25px;
+            
+        }
+        &.ai {
+            right: -25px;
+        }
+    }
+}
+
+#result {
+    margin: 40px 0 0;
+    font-size: 42px;
+    color: white;
+    height: 96px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+#choices {
+    margin: 40px 0 0;
+    display: flex;
+    justify-content: center;
+
+    .choice-item {
+        border-radius: 50%;
+        border: 3px solid white;
+        margin: 0 10px;
+        padding: 10px;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background-color: #3b404b;
+        }
+        &.won {
+            box-shadow: 0 0 10px green;
+            border-color: green;
+        }
+        &.lost {
+            box-shadow: 0 0 10px rgb(128, 0, 0);
+            border-color: rgb(128, 0, 0);
+        }
+        &.draw {
+            box-shadow: 0 0 10px rgb(128, 128, 128);
+            border-color: rgb(128, 128, 128);
+        }
+    }
+}
+
+#callToAction {
+    margin: 40px 0 0;
+    color: white;
+    font-size: 24px;
+}
+
+#outcomeOverlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 36px;
+    line-height: 1.4;
+    padding: 10%;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    #pageTitle {
+        font-size: 30px;
+    }
+    #numberOfPointsToWin {
+        font-size: 16px;
+    }
+    #result {
+        font-size: 26px;
+        height: 87px;
+    }
+    #choices {
+        margin: 20px 0 0;
+    }
+    #callToAction {
+        font-size: 20px;
+    }
+}
